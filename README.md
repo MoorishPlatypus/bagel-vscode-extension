@@ -252,6 +252,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - 🤗 [BAGEL Model](https://huggingface.co/ByteDance-Seed/BAGEL-7B-MoT)
 - 🎮 [BAGEL Demo](https://demo.bagel-ai.org/)
 
+  ## 🙏  Donations
+If you'd like to support development:
+
+Bitcoin: 1B8xs4LWbwFq4Zi4pzEmjNYkTCgsUByb5L
+Ethereum: 0xe89c84A7758429b4D11a2091e1dccf7433328Fa9
+
 ---
 
 **Made by Sxedra and The Moorish with ❤️ by the community for developers worldwide**
