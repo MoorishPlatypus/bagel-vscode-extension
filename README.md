@@ -254,6 +254,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Made with ❤️ by the community for developers worldwide**
+**Made by Sxedra and The Moorish with ❤️ by the community for developers worldwide**
 
 *Transform your coding experience with BAGEL AI - where artificial intelligence meets human creativity.*
