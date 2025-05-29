@@ -1,0 +1,205 @@
+{
+  "name": "bagel-ai",
+  "displayName": "BAGEL AI Assistant",
+  "description": "Multimodal AI coding assistant powered by BAGEL - Generate code, explain code, create images, and chat with AI",
+  "version": "1.0.0",
+  "publisher": "bagel-ai",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other",
+    "Machine Learning",
+    "Programming Languages",
+    "Snippets"
+  ],
+  "keywords": [
+    "ai",
+    "bagel",
+    "code generation",
+    "multimodal",
+    "assistant",
+    "image generation",
+    "chat"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "bagel.generateCode",
+        "title": "Generate Code with BAGEL",
+        "category": "BAGEL"
+      },
+      {
+        "command": "bagel.explainCode",
+        "title": "Explain Code with BAGEL",
+        "category": "BAGEL"
+      },
+      {
+        "command": "bagel.optimizeCode",
+        "title": "Optimize Code with BAGEL",
+        "category": "BAGEL"
+      },
+      {
+        "command": "bagel.openChat",
+        "title": "Open BAGEL Chat",
+        "category": "BAGEL"
+      },
+      {
+        "command": "bagel.generateImage",
+        "title": "Generate Image with BAGEL",
+        "category": "BAGEL"
+      },
+      {
+        "command": "bagel.startServer",
+        "title": "Start BAGEL Server",
+        "category": "BAGEL"
+      },
+      {
+        "command": "bagel.stopServer",
+        "title": "Stop BAGEL Server",
+        "category": "BAGEL"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "bagel.explainCode",
+          "when": "editorHasSelection",
+          "group": "bagel@1"
+        },
+        {
+          "command": "bagel.optimizeCode",
+          "when": "editorHasSelection",
+          "group": "bagel@2"
+        },
+        {
+          "command": "bagel.generateCode",
+          "group": "bagel@3"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "bagel.generateCode"
+        },
+        {
+          "command": "bagel.explainCode"
+        },
+        {
+          "command": "bagel.optimizeCode"
+        },
+        {
+          "command": "bagel.openChat"
+        },
+        {
+          "command": "bagel.generateImage"
+        },
+        {
+          "command": "bagel.startServer"
+        },
+        {
+          "command": "bagel.stopServer"
+        }
+      ]
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "bagelChat",
+          "name": "BAGEL AI Chat",
+          "when": "bagel.enabled"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "bagel",
+          "title": "BAGEL AI",
+          "icon": "$(robot)"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "BAGEL AI",
+      "properties": {
+        "bagel.serverUrl": {
+          "type": "string",
+          "default": "http://localhost:12000",
+          "description": "BAGEL server URL"
+        },
+        "bagel.autoStartServer": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically start BAGEL server when extension activates"
+        },
+        "bagel.maxTokens": {
+          "type": "number",
+          "default": 2048,
+          "description": "Maximum tokens for code generation"
+        },
+        "bagel.temperature": {
+          "type": "number",
+          "default": 0.7,
+          "minimum": 0,
+          "maximum": 2,
+          "description": "Temperature for AI responses (0 = deterministic, 2 = very creative)"
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "bagel.generateCode",
+        "key": "ctrl+shift+g",
+        "mac": "cmd+shift+g"
+      },
+      {
+        "command": "bagel.explainCode",
+        "key": "ctrl+shift+e",
+        "mac": "cmd+shift+e",
+        "when": "editorHasSelection"
+      },
+      {
+        "command": "bagel.openChat",
+        "key": "ctrl+shift+b",
+        "mac": "cmd+shift+b"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.28.0",
+    "typescript": "^4.9.4",
+    "@vscode/test-electron": "^2.2.0",
+    "@vscode/vsce": "^2.15.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "ws": "^8.14.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MoorishPlatypus/bagel-vscode-extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MoorishPlatypus/bagel-vscode-extension/issues"
+  },
+  "homepage": "https://github.com/MoorishPlatypus/bagel-vscode-extension#readme",
+  "license": "MIT",
+  "icon": "media/bagel-icon.png"
+}

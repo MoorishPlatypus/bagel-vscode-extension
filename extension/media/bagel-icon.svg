@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="60" fill="#FF6B35" stroke="#333" stroke-width="4"/>
+  
+  <!-- Bagel shape -->
+  <ellipse cx="64" cy="64" rx="45" ry="25" fill="#D4A574" stroke="#8B4513" stroke-width="2"/>
+  
+  <!-- Bagel hole -->
+  <ellipse cx="64" cy="64" rx="15" ry="8" fill="#FF6B35"/>
+  
+  <!-- Sesame seeds -->
+  <circle cx="50" cy="55" r="2" fill="#F5DEB3"/>
+  <circle cx="78" cy="58" r="2" fill="#F5DEB3"/>
+  <circle cx="55" cy="72" r="2" fill="#F5DEB3"/>
+  <circle cx="75" cy="70" r="2" fill="#F5DEB3"/>
+  <circle cx="45" cy="68" r="2" fill="#F5DEB3"/>
+  <circle cx="82" cy="65" r="2" fill="#F5DEB3"/>
+  
+  <!-- AI sparkle -->
+  <g transform="translate(90,30)">
+    <path d="M0,-8 L2,0 L0,8 L-2,0 Z" fill="#FFD700"/>
+    <path d="M-8,0 L0,2 L8,0 L0,-2 Z" fill="#FFD700"/>
+  </g>
+  
+
+</svg>
